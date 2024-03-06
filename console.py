@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Console Module """
 import cmd
+import re
 import sys
 from models.base_model import BaseModel
 from models.__init__ import storage
@@ -10,6 +11,42 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
+
+
+def checker(att_val):
+    """ Checks if a parameter is a valid att=val"""
+    patt = r'^[a-z]+[\d_a-zA-Z]*=([0-9.-]+|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\')$'
+    match = re.match(patt, att_val)
+    if match:
+        return True
+    else:
+        return False
+
+
+def valid_att_val(arg_list):
+    """ Takes a list of argumnts and returns a dict of valid att=val"""
+    if isinstance(arg_list, list):
+        all_att_val = arg_list[1:]
+        valid = {}
+        for x in all_att_val:
+            if checker(x):
+                att_val = x.split('=')
+                if "_" in att_val[1]:
+                    att_val[1] = att_val[1].replace('_', ' ')
+                valid.update({att_val[0]: att_val[1]})
+        return valid
+
+
+def create_instance(instance_name, att_val_dict):
+    """ Creates a new instance of a class
+        and adds attributes with their values to it
+        :return : newly created instance
+    """
+    new_instance = instance_name()
+    if isinstance(att_val_dict, dict):
+        for key, val in att_val_dict.items():
+            setattr(new_instance, key, val)
+    return new_instance
 
 
 class HBNBCommand(cmd.Cmd):
@@ -115,13 +152,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
+        args_list = args.split()
         if not args:
             print("** class name missing **")
             return
-        elif args not in HBNBCommand.classes:
+        elif args_list[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_instance = HBNBCommand.classes[args]()
+        att_val_dict = valid_att_val(args_list)
+        new_instance = create_instance(HBNBCommand.classes[args_list[0]], att_val_dict)
         storage.save()
         print(new_instance.id)
         storage.save()
