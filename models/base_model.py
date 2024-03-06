@@ -3,9 +3,8 @@
 import uuid
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, String, DateTime
 
-import models
 
 Base = declarative_base()
 
@@ -29,6 +28,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            self.save()
         else:
             instance_att = {}
             for key, val in kwargs.items():
