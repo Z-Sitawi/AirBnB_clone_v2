@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a59d69e-ad7f-4326-ab84-6d9b83c49cbc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/base_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/engine/file_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/engine/file_storage.py" afterDir="false" />
-    </list>
+    <list default="true" id="0a59d69e-ad7f-4326-ab84-6d9b83c49cbc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,16 +57,5 @@
       <updated>1709720102776</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/console.py</url>
-          <line>165</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
