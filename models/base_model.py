@@ -33,11 +33,11 @@ class BaseModel:
             instance_att = {}
             for key, val in kwargs.items():
                 if key == 'updated_at':
-                    instance_att['updated_at'] = datetime.strptime(kwargs['updated_at'],
-                                                                   '%Y-%m-%dT%H:%M:%S.%f')
+                    instance_att['updated_at'] = datetime.strptime(
+                        kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == 'created_at':
-                    instance_att['created_at'] = datetime.strptime(kwargs['created_at'],
-                                                                   '%Y-%m-%dT%H:%M:%S.%f')
+                    instance_att['created_at'] = datetime.strptime(
+                        kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == '__class__':
                     pass
                 elif not hasattr(self, key):

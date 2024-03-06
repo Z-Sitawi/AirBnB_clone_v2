@@ -4,7 +4,7 @@ import json
 
 
 def delete_element_by_value(dictionary, value):
-    """ Deletes the first occurrence of a specified value from a dictionary. """
+    """ Deletes the first occurrence of a specified value from a dictionary"""
     keys_to_delete = []
     for key, val in dictionary.items():
         if val == value:
