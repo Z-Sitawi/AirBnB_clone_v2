@@ -15,7 +15,8 @@ from models.review import Review
 
 def checker(att_val):
     """ Checks if a parameter is a valid att=val"""
-    patt = r'^[a-z]+[\d_a-zA-Z]*=([0-9.-]+|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\')$'
+    patt = (r'^[a-z]+[\d_a-zA-Z]*='
+            r'([0-9.-]+|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\')$')
     match = re.match(patt, att_val)
     if match:
         return True
@@ -173,7 +174,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         att_val_dict = valid_att_val(args_list)
-        new_instance = create_instance(HBNBCommand.classes[args_list[0]], att_val_dict)
+        new_instance = create_instance(HBNBCommand.classes[args_list[0]],
+                                       att_val_dict)
         storage.save()
         print(new_instance.id)
         storage.save()
@@ -237,9 +239,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
         key = c_name + "." + c_id
-
         try:
-            del(storage.all()[key])
+            del (storage.all()[key])
             storage.save()
         except KeyError:
             print("** no instance found **")
@@ -371,6 +372,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
