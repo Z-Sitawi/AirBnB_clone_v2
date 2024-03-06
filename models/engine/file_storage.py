@@ -3,6 +3,17 @@
 import json
 
 
+def delete_element_by_value(dictionary, value):
+    """ Deletes the first occurrence of a specified value from a dictionary. """
+    keys_to_delete = []
+    for key, val in dictionary.items():
+        if val == value:
+            keys_to_delete.append(key)
+
+    for key in keys_to_delete:
+        del dictionary[key]
+
+
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
@@ -45,6 +56,15 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
+
+    def delete(self, obj=None):
+        """ Deletes obj from __objects if it’s inside
+        if obj is equal to None, the method should does not do anything
+        """
+        if obj is None:
+            return
+        if obj in FileStorage.__objects.values():
+            delete_element_by_value(FileStorage.__objects, obj)
