@@ -11,7 +11,7 @@ def delete_element_by_value(dictionary, value):
             keys_to_delete.append(key)
 
     for key in keys_to_delete:
-        del dictionary[key]
+        dictionary.pop(key)
 
 
 class FileStorage:
