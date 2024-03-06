@@ -23,6 +23,18 @@ def checker(att_val):
         return False
 
 
+def isit_numbers(s):
+    try:
+        num = int(s)
+        return num
+    except ValueError:
+        try:
+            num = float(s)
+            return num
+        except ValueError:
+            return s
+
+
 def valid_att_val(arg_list):
     """ Takes a list of argumnts and returns a dict of valid att=val"""
     if isinstance(arg_list, list):
@@ -33,6 +45,7 @@ def valid_att_val(arg_list):
                 att_val = x.split('=')
                 if "_" in att_val[1]:
                     att_val[1] = att_val[1].replace('_', ' ')
+                att_val[1] = isit_numbers(att_val[1])
                 valid.update({att_val[0]: att_val[1]})
         return valid
 
