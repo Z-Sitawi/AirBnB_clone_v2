@@ -46,6 +46,8 @@ def valid_att_val(arg_list):
                 att_val = x.split('=')
                 if "_" in att_val[1]:
                     att_val[1] = att_val[1].replace('_', ' ')
+                if '"' in att_val[1]:
+                    att_val[1] = att_val[1].replace('"', '')
                 att_val[1] = isit_numbers(att_val[1])
                 valid.update({att_val[0]: att_val[1]})
         return valid
@@ -176,7 +178,8 @@ class HBNBCommand(cmd.Cmd):
         att_val_dict = valid_att_val(args_list)
         new_instance = create_instance(HBNBCommand.classes[args_list[0]],
                                        att_val_dict)
-        storage.save()
+
+        new_instance.save()
         print(new_instance.id)
 
     def help_create(self):
