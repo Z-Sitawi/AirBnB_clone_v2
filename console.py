@@ -37,7 +37,7 @@ def isit_numbers(s):
 
 
 def valid_att_val(arg_list):
-    """ Takes a list of argumnts and returns a dict of valid att=val"""
+    """ Takes a list of arguments and returns a dict of valid att=val"""
     if isinstance(arg_list, list):
         all_att_val = arg_list[1:]
         valid = {}
@@ -64,7 +64,7 @@ def create_instance(instance_name, att_val_dict):
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Contains the functionality for the HBNB console"""
+    """ Contains the functionality for the HBnB console"""
 
     # determines prompt for interactive/non-interactive modes
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
@@ -82,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
             }
 
     def preloop(self):
-        """Prints if isatty is false"""
+        """Prints if is at terminal is false"""
         if not sys.__stdin__.isatty():
             print('(hbnb)')
 
@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         """
         _cmd = _cls = _id = _args = ''  # initialize line elements
 
-        # scan for general formating - i.e '.', '(', ')'
+        # scan for general formatting - i.e '.', '(', ')'
         if not ('.' in line and '(' in line and ')' in line):
             return line
 
@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
             if _cmd not in HBNBCommand.dot_cmds:
                 raise Exception
 
-            # if parantheses contain arguments, parse them
+            # if parenthesis contain arguments, parse them
             pline = pline[pline.find('(') + 1:pline.find(')')]
             if pline:
                 # partition args: (<id>, [<delim>], [<*args>])
@@ -178,7 +178,6 @@ class HBNBCommand(cmd.Cmd):
                                        att_val_dict)
         storage.save()
         print(new_instance.id)
-        storage.save()
 
     def help_create(self):
         """ Help information for the create method """
@@ -209,7 +208,7 @@ class HBNBCommand(cmd.Cmd):
 
         key = c_name + "." + c_id
         try:
-            print(storage._FileStorage__objects[key])
+            print(storage.FileStorage__objects[key])
         except KeyError:
             print("** no instance found **")
 
@@ -259,11 +258,11 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in storage.FileStorage__objects.items():
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in storage.FileStorage__objects.items():
                 print_list.append(str(v))
 
         print(print_list)
@@ -276,7 +275,7 @@ class HBNBCommand(cmd.Cmd):
     def do_count(self, args):
         """Count current number of class instances"""
         count = 0
-        for k, v in storage._FileStorage__objects.items():
+        for k, v in storage.FileStorage__objects.items():
             if args == k.split('.')[0]:
                 count += 1
         print(count)
