@@ -8,7 +8,7 @@ from models.place import Place
 from models.review import Review
 from models.amenity import Amenity
 from os import getenv
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 
@@ -33,11 +33,9 @@ class DBStorage:
 
         self.__engine = create_engine(url, pool_pre_ping=True)
 
-        metadata = MetaData()
-        metadata.reflect(bind=self.__engine)
         if getenv('HBNB_ENV') == 'test':
             # Drop all tables
-            metadata.drop_all(self.__engine)
+            Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
         """ Query on the current database session """

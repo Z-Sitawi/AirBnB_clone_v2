@@ -28,7 +28,7 @@ class FileStorage:
             return FileStorage.__objects
         specific_objects = {}
         for k, v in FileStorage.__objects.items():
-            if cls.__name__ in k:
+            if cls in k:
                 specific_objects.update({k: v})
         return specific_objects
 

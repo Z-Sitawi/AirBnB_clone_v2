@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="">
+    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="fix __str__">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/base_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/engine/file_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/engine/file_storage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests for test_base_model.test_basemodel.test_created_at.executor": "Run",
@@ -25,11 +29,15 @@
     "Python tests.Python tests for test_base_model.test_basemodel.test_kwargs_one.executor": "Run",
     "Python tests.Python tests for test_base_model.test_basemodel.test_updated_at.executor": "Run",
     "Python tests.Python tests in test_amenity.py.executor": "Run",
-    "Python.base_model.executor": "Debug",
+    "Python.__init__.executor": "Run",
+    "Python.base_model.executor": "Run",
     "Python.city.executor": "Run",
     "Python.console.executor": "Debug",
-    "Python.state.executor": "Debug",
-    "git-widget-placeholder": "master"
+    "Python.db_storage.executor": "Run",
+    "Python.file_storage.executor": "Run",
+    "Python.state.executor": "Run",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/root/AirBnB_clone_v2"
   }
 }]]></component>
   <component name="RunManager">
@@ -103,18 +111,36 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="fix __str__">
+      <option name="closed" value="true" />
+      <created>1709920606718</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709920606718</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix __str__">
+      <option name="closed" value="true" />
+      <created>1709920636488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709920636488</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="fix __str__" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix __str__" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/console.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="8" />
+          <line>254</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
