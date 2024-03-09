@@ -1,9 +1,19 @@
 #!/usr/bin/python3
 """ Place Module for HBNB project """
 from models.base_model import BaseModel, Base
-from sqlalchemy import String, Float, Integer, Column, ForeignKey
+from sqlalchemy import String, Float, Integer, Column, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from os import getenv
+
+
+place_amenities = Table('place_amenities', Base.metadata,
+                        Column('place_id',
+                               String(60), ForeignKey('places.id'),
+                               nullable=False, primary_key=True),
+                        Column('amenity_id',
+                               String(60), ForeignKey('amenities.id'),
+                               nullable=False, primary_key=True)
+                        )
 
 
 class Place(BaseModel, Base):
@@ -44,6 +54,8 @@ class Place(BaseModel, Base):
     amenity_ids = []
 
     reviews = relationship('Review', backref='place', cascade="delete")
+    amenities = relationship("Amenity", secondary='place_amenities', viewonly=False,
+                             back_populates="places")
 
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property
@@ -55,3 +67,25 @@ class Place(BaseModel, Base):
                 if review.place_id == self.id:
                     reviews_list.append(review)
             return reviews_list
+
+        @property
+        def amenities(self):
+            """Get a list of all related amenity objects."""
+            from models import storage
+            amenities_list = []
+            for amenity in list(storage.all("Amenity").values()):
+                if amenity.id in self.amenity_ids:
+                    amenities_list.append(amenity)
+            return amenities_list
+
+        @amenities.setter
+        def amenities(self, amenity_object):
+            """ handles append method for adding an (Amenity.id)
+                to the attribute amenity_ids
+                This method accepts only Amenity object, otherwise, does nothing.
+            """
+            from models.amenity import Amenity
+            if not isinstance(amenity_object, Amenity):
+                return
+
+            self.amenity_ids.append(amenity_object.id)
