@@ -1,9 +1,13 @@
-<h1>Airbnb clone Mysql</h1>
+<h1>Airbnb clone MySql</h1>
 In this project I'll take a new advanced step for me, since I'll have to handle Databases making use of my background knowledge about ORM and SqlAlchemy.<br>
 Now! I must be able to store the data in a <b>JSON file</b> and a <b>databse</b>.
 <br>
 <img src="https://github.com/Z-Sitawi/AirBnB_clone_v2/assets/125461010/9a1bb254-407b-4d31-8d66-406848837a41" alt="layout">
-<hr><hr><hr>
+<hr>
+<h2>Graph Representation of hbnb_dev_db tables</h2>
+<img src="![image](https://github.com/Z-Sitawi/AirBnB_clone_v2/assets/125461010/2eaceb28-554b-489e-a6e2-19e9c46df6cf)
+" alt="Graph">
+<hr><hr>
 <center> <h1>HBNB - The Console</h1> </center>
 
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
