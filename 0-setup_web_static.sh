@@ -23,8 +23,9 @@ sudo mkdir -p "/data/web_static/releases/test/"
 # Create a fake HTML file /data/web_static/releases/test/index.html
 # (with simple content, to test your Nginx configuration)
 sudo touch "/data/web_static/releases/test/index.html"
+sudo su
 echo "Hello Morocco!" > /data/web_static/releases/test/index.html
-
+exit
 # Create a symbolic link /data/web_static/current
 # linked to the /data/web_static/releases/test/ folder.
 # If the symbolic link already exists, it should be deleted
