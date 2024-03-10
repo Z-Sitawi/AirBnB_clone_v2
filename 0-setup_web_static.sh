@@ -23,7 +23,7 @@ sudo mkdir -p "/data/web_static/releases/test/"
 # Create a fake HTML file /data/web_static/releases/test/index.html
 # (with simple content, to test your Nginx configuration)
 sudo touch "/data/web_static/releases/test/index.html"
-sudo echo "Hello Morocco!" > /data/web_static/releases/test/index.html
+echo "Hello Morocco!" > /data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current
 # linked to the /data/web_static/releases/test/ folder.
@@ -33,7 +33,7 @@ if [ -L "/data/web_static/current" ]; then
     # If it exists, delete it
     sudo rm "/data/web_static/current"
 fi
-ln -s "$(pwd)/data/web_static/releases/test/" /data/web_static/current
+ln -s "/data/web_static/releases/test/" /data/web_static/current
 
 # Give ownership of the /data/ folder to the ubuntu user AND group.
 # This should be recursive;
@@ -49,7 +49,7 @@ printf %s "server {
     root   /var/www/html;
     index  index.html index.htm;
 
-    location /hbnb_static {
+    location https://www.z-sitawi.tech/hbnb_static {
         alias /data/web_static/current;
         index index.html index.htm;
     }
