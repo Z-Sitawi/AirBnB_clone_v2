@@ -6,23 +6,23 @@ sudo apt update
 command -v nginx >/dev/null 2>&1 || { sudo apt install -y nginx; }
 
 # Create the folder /data/ if it does not already exist
-mkdir -p "/data/"
+sudo mkdir -p "/data/"
 
 # Create the folder /data/web_static/ if it does not already exist
-mkdir -p "/data/web_static/"
+sudo mkdir -p "/data/web_static/"
 
 # Create the folder /data/web_static/releases/ if it does not already exist
-mkdir -p "/data/web_static/releases/"
+sudo mkdir -p "/data/web_static/releases/"
 
 # Create the folder /data/web_static/shared/ if it does not already exist
-mkdir -p "/data/web_static/shared/"
+sudo mkdir -p "/data/web_static/shared/"
 
 # Create the folder /data/web_static/releases/test/ if it not exist
-mkdir -p "/data/web_static/releases/test/"
+sudo mkdir -p "/data/web_static/releases/test/"
 
 # Create a fake HTML file /data/web_static/releases/test/index.html
 # (with simple content, to test your Nginx configuration)
-touch "/data/web_static/releases/test/index.html"
+sudo touch "/data/web_static/releases/test/index.html"
 echo "Hello Morocco!" > /data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current
@@ -31,7 +31,7 @@ echo "Hello Morocco!" > /data/web_static/releases/test/index.html
 # and recreated every time the script is ran.
 if [ -L "/data/web_static/current" ]; then
     # If it exists, delete it
-    rm "/data/web_static/current"
+    sudo rm "/data/web_static/current"
 fi
 ln -s "$(pwd)/data/web_static/releases/test/" /data/web_static/current
 
