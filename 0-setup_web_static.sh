@@ -6,24 +6,24 @@ sudo apt update
 command -v nginx >/dev/null 2>&1 || { sudo apt install -y nginx; }
 
 # Create the folder /data/ if it does not already exist
-mkdir -p "./data/"
+mkdir -p "/data/"
 
 # Create the folder /data/web_static/ if it does not already exist
-mkdir -p "./data/web_static/"
+mkdir -p "/data/web_static/"
 
 # Create the folder /data/web_static/releases/ if it does not already exist
-mkdir -p "./data/web_static/releases/"
+mkdir -p "/data/web_static/releases/"
 
 # Create the folder /data/web_static/shared/ if it does not already exist
-mkdir -p "./data/web_static/shared/"
+mkdir -p "/data/web_static/shared/"
 
 # Create the folder /data/web_static/releases/test/ if it not exist
-mkdir -p "./data/web_static/releases/test/"
+mkdir -p "/data/web_static/releases/test/"
 
 # Create a fake HTML file /data/web_static/releases/test/index.html
 # (with simple content, to test your Nginx configuration)
-touch "./data/web_static/releases/test/index.html"
-echo "Hello Morocco!" > ./data/web_static/releases/test/index.html
+touch "/data/web_static/releases/test/index.html"
+echo "Hello Morocco!" > /data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current
 # linked to the /data/web_static/releases/test/ folder.
