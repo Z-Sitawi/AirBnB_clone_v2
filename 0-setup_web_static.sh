@@ -43,14 +43,15 @@ sudo chown -R ubuntu:ubuntu /data/
 
 # Update the Nginx configuration
 # to serve the content of /data/web_static/current/ to hbnb_static
-printf %s "server {
+sudo tee -a /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
+    add_header X-Served-By \$HOSTNAME;
     root   /var/www/html;
     index  index.html index.htm;
 
-    location https://www.z-sitawi.tech/hbnb_static {
+    location /hbnb_static {
         alias /data/web_static/current;
         index index.html index.htm;
     }
@@ -64,7 +65,8 @@ printf %s "server {
       root /var/www/html;
       internal;
     }
-}" > /etc/nginx/sites-available/default
+}
+EOF
 
 
 # Restart Nginx to apply the changes
