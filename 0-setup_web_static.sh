@@ -2,8 +2,8 @@
 # Sets up your web servers for the deployment of web_static
 
 # Updates the package list & Installs Nginx if it not already installed
-sudo apt update
-command -v nginx >/dev/null 2>&1 || { sudo apt install -y nginx; }
+sudo apt-get update
+apt-get install -y nginx
 
 # Create the folder /data/ if it does not already exist
 sudo mkdir -p "/data/"
@@ -23,9 +23,8 @@ sudo mkdir -p "/data/web_static/releases/test/"
 # Create a fake HTML file /data/web_static/releases/test/index.html
 # (with simple content, to test your Nginx configuration)
 sudo touch "/data/web_static/releases/test/index.html"
-sudo su
-echo "Hello Morocco!" > /data/web_static/releases/test/index.html
-exit
+sudo echo "Hello Morocco!" > /data/web_static/releases/test/index.html
+
 # Create a symbolic link /data/web_static/current
 # linked to the /data/web_static/releases/test/ folder.
 # If the symbolic link already exists, it should be deleted
@@ -43,11 +42,10 @@ sudo chown -R ubuntu:ubuntu /data/
 
 # Update the Nginx configuration
 # to serve the content of /data/web_static/current/ to hbnb_static
-sudo tee -a /etc/nginx/sites-available/default > /dev/null <<EOF
-server {
+printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By \$HOSTNAME;
+    add_header X-Served-By $HOSTNAME;
     root   /var/www/html;
     index  index.html index.htm;
 
@@ -65,9 +63,7 @@ server {
       root /var/www/html;
       internal;
     }
-}
-EOF
-
+}" > /etc/nginx/sites-available/default
 
 # Restart Nginx to apply the changes
 sudo service nginx restart
