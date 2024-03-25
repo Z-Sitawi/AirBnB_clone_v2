@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="Full deployment" />
+    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="Keep it clean!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +37,7 @@
     "Python tests.Python tests for test_base_model.test_basemodel.test_kwargs_one.executor": "Run",
     "Python tests.Python tests for test_base_model.test_basemodel.test_updated_at.executor": "Run",
     "Python tests.Python tests in test_amenity.py.executor": "Run",
+    "Python.0-hello_route.executor": "Debug",
     "Python.__init__.executor": "Run",
     "Python.base_model.executor": "Run",
     "Python.city.executor": "Run",
@@ -122,7 +125,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -271,7 +274,55 @@
       <option name="project" value="LOCAL" />
       <updated>1710095839657</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Full deployment">
+      <option name="closed" value="true" />
+      <created>1710096977937</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710096977937</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Full deployment">
+      <option name="closed" value="true" />
+      <created>1710098336261</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1710098336261</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Full deployment">
+      <option name="closed" value="true" />
+      <created>1710099220166</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1710099220166</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Full deployment">
+      <option name="closed" value="true" />
+      <created>1710099369233</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1710099369233</updated>
+    </task>
+    <task id="LOCAL-00022" summary="puppet task">
+      <option name="closed" value="true" />
+      <created>1710100060408</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1710100060408</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Keep it clean!">
+      <option name="closed" value="true" />
+      <created>1710100459948</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710100459948</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,6 +330,8 @@
     <MESSAGE value="Prepare my web servers" />
     <MESSAGE value="Compress before sending" />
     <MESSAGE value="Full deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full deployment" />
+    <MESSAGE value="puppet task" />
+    <MESSAGE value="Keep it clean!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keep it clean!" />
   </component>
 </project>
