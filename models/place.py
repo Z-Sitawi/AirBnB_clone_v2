@@ -7,13 +7,13 @@ from os import getenv
 
 
 place_amenity = Table('place_amenity', Base.metadata,
-                        Column('place_id',
-                               String(60), ForeignKey('places.id'),
-                               nullable=False, primary_key=True),
-                        Column('amenity_id',
-                               String(60), ForeignKey('amenities.id'),
-                               nullable=False, primary_key=True),
-                        )
+                      Column('place_id', String(60),
+                             ForeignKey('places.id'), nullable=False,
+                             primary_key=True),
+                      Column('amenity_id',
+                             String(60), ForeignKey('amenities.id'),
+                             nullable=False, primary_key=True),
+                      )
 
 
 class Place(BaseModel, Base):
@@ -82,7 +82,7 @@ class Place(BaseModel, Base):
         def amenities(self, amenity_object):
             """ handles append method for adding an (Amenity.id)
                 to the attribute amenity_ids
-                This method accepts only Amenity object, otherwise, does nothing.
+                This method accepts only Amenity object, else, does nothing.
             """
             from models.amenity import Amenity
             if not isinstance(amenity_object, Amenity):
