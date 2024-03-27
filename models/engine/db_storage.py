@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """This module defines the DB Storage engine for hbnb clone"""
+from models.amenity import Amenity
 from models.base_model import Base
 from models.city import City
 from models.user import User
-from models.state import State
 from models.place import Place
 from models.review import Review
-from models.amenity import Amenity
+from models.state import State
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session

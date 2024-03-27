@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="Keep it clean!">
+    <list default="true" id="c0411e3e-25d7-43f4-8e57-54b129b158ad" name="Changes" comment="starts a Flask web application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,29 +30,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_base_model.test_basemodel.test_created_at.executor": "Run",
-    "Python tests.Python tests for test_base_model.test_basemodel.test_id.executor": "Run",
-    "Python tests.Python tests for test_base_model.test_basemodel.test_kwargs_one.executor": "Run",
-    "Python tests.Python tests for test_base_model.test_basemodel.test_updated_at.executor": "Run",
-    "Python tests.Python tests in test_amenity.py.executor": "Run",
-    "Python.0-hello_route.executor": "Debug",
-    "Python.__init__.executor": "Run",
-    "Python.base_model.executor": "Run",
-    "Python.city.executor": "Run",
-    "Python.console.executor": "Debug",
-    "Python.db_storage.executor": "Run",
-    "Python.file_storage.executor": "Run",
-    "Python.scratch.executor": "Run",
-    "Python.state.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/root/AirBnB_clone_v2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_base_model.test_basemodel.test_created_at.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_base_model.test_basemodel.test_id.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_base_model.test_basemodel.test_kwargs_one.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_base_model.test_basemodel.test_updated_at.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_amenity.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.0-hello_route.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.city.executor&quot;: &quot;Run&quot;,
+    &quot;Python.console.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.db_storage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_storage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scratch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.state.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/root/AirBnB_clone_v2&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Python tests.Python tests for test_base_model.test_basemodel.test_created_at">
     <configuration name="Python tests for test_base_model.test_basemodel.test_created_at" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AirBnB_clone_v2" />
       <option name="ENV_FILES" value="" />
