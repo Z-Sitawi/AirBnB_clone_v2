@@ -34,7 +34,7 @@ class DBStorage:
         self.__engine = create_engine(url, pool_pre_ping=True)
 
         if getenv('HBNB_ENV') == 'test':
-            # Drop all tables
+            """ Drop all tables """
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
