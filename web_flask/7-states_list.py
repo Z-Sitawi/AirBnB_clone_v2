@@ -1,28 +1,24 @@
 #!/usr/bin/python3
-""" Starts a Flask web application """
+"""
+start Flask application
+"""
+
 from flask import Flask, render_template
-from models import *
 from models import storage
-
-# Create a Flask web application
 app = Flask(__name__)
-
-# Define routes
 
 
 @app.route('/states_list', strict_slashes=False)
-def state_list():
-    """Display an HTML page ith the states listed in alphabetical order"""
+def states_list():
+    """display an HTML page with the states listed in alphabetical order"""
     states = sorted(list(storage.all("State").values()), key=lambda x: x.name)
-    return render_template('7-state_list.html', states=states)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
-def teardown_appcontext():
-    """Removes the current SQLAlchemy Session after each request"""
+def teardown_db():
+    """closes the storage on teardown"""
     storage.close()
-
-# Run the Flask app
 
 
 if __name__ == '__main__':
